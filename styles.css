@@ -1,0 +1,24 @@
+th,
+td {
+  border: 1px solid black;
+  padding: 1px 5px 1px 5px;
+  text-align: center;
+}
+
+select {
+  margin-bottom: 5px;
+}
+
+h1,
+div {
+  color: rgb(82, 7, 7);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  width: 100%;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
