@@ -535,7 +535,6 @@ mountainDropdownEl.onchange = onMountainDropdownChange;
 const tbody = document.querySelector("#mountainTbl tbody");
 
 const displayPictureDiv = document.getElementById("imgOutput");
-insertedImagePaths = [];
 
 for (let i = 0; i < mountainsArray.length; i++) {
   const mountainName = new Option(
@@ -557,14 +556,8 @@ function onMountainDropdownChange() {
     tbody.removeChild(mtn);
   });
 
-  const displayedImage = document.querySelector("#imgOutput img");
-
-  if (displayedImage) {
-    displayedImage.remove();
-  }
-
   selectedMountains.forEach((park) => {
-    displayPicture();
+    displayPicture(park);
     locationSelected(tbody, park);
   });
 }
@@ -594,26 +587,18 @@ function locationSelected(myTable, banana) {
   //   cell4.innerHTML = banana.coords;
 }
 
-function displayPicture() {
-  const selectedImageValue = mountainDropdownEl.value;
+function displayPicture(park) {
+  let imgEl = document.querySelector("#imgOutput img");
 
-  if (selectedImageValue === "") {
-    alert("Nothing selected");
+  if (!imgEl) {
+    imgEl = document.createElement("img");
+    displayPictureDiv.appendChild(imgEl);
   }
-  if (insertedImagePaths.includes(selectedImageValue)) {
-    return;
-  }
-  insertedImagePaths.push(selectedImageValue);
 
-  const selectedImageObj = mountainsArray.find(
-    (img) => img.name == selectedImageValue
-  );
-  let imageDis = `./images/${selectedImageObj.img}`;
+  let imageDis = `./images/${park.img}`;
 
-  const imgEl = document.createElement("img");
   imgEl.src = imageDis;
-  imgEl.alt = selectedImageObj.name;
-  displayPictureDiv.appendChild(imgEl);
+  imgEl.alt = park.name;
 }
 
 // {

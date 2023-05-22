@@ -5821,6 +5821,13 @@ const tbody = document.querySelector("#stateParkInfo tbody");
 
 function onLocationChange() {
   const selectedState = locationDropdownEl.value;
+
+  Array.from(parkTypeEl).forEach((option) => {
+    if (parkTypeEl) {
+      parkTypeEl.value = "select";
+    }
+  });
+
   const selectedStates = nationalParksArray.filter(
     (state) => state.State === selectedState
   );
@@ -5839,11 +5846,18 @@ function onLocationChange() {
 function onTypeChange() {
   const selectedType = parkTypeEl.value;
 
+  Array.from(locationDropdownEl).forEach((option) => {
+    if (selectedType) {
+      locationDropdownEl.value = "select";
+    }
+  });
+
   const selectedTypes = nationalParksArray.filter((park) =>
     park.LocationName.includes(selectedType)
   );
-  console.log(selectedTypes);
+
   const tableRows = document.querySelectorAll("#tableRow tr");
+
   Array.from(tableRows).forEach((park) => {
     tbody.removeChild(park);
   });
@@ -5878,4 +5892,15 @@ function locationSelected(myTable, banana) {
 
   const cell5 = row.insertCell(4);
   cell5.innerHTML = banana.Location.coordinates;
+
+  if (banana.Address == 0) {
+    cell2.innerHTML = `${banana.City}, ${banana.State}`;
+  }
+
+  if (cell3.innerHTML == 0) {
+    cell3.innerHTML = "No Information Known";
+  }
+  if (cell4.innerHTML == 0) {
+    cell4.innerHTML = "No Information Known";
+  }
 }
