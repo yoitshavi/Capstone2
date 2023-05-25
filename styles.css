@@ -1,24 +1,127 @@
+.nav-link {
+  color: #520707;
+}
+table {
+  border-spacing: 0px;
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
+}
 th,
 td {
+  background-color: antiquewhite;
   border: 1px solid black;
   padding: 1px 5px 1px 5px;
   text-align: center;
+  word-break: break;
+}
+select {
+  border: thin solid #520707;
+  color: #520707;
+  font-weight: bold;
+  background-color: antiquewhite;
 }
 
-select {
+.selectionBoxes {
+  align-items: center;
+  justify-content: center;
+  width: 70%;
   margin-bottom: 5px;
+}
+
+p {
+  font-size: larger;
+  width: 52%;
+
+  padding: 0 0 0 0;
+
+  font-weight: 900;
+
+  color: #520707;
+}
+.col-sm-3 {
+  text-align: center;
 }
 
 h1,
 div {
-  color: rgb(82, 7, 7);
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #520707;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   width: 100%;
   font-weight: 400;
-  margin: 0;
+  margin: 10px;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+.selectionMtn {
+  border-radius: 100px;
+
+  align-content: center;
+  justify-content: center;
+
+  width: 25%;
+  margin: 5px;
+}
+.mountainSelect {
+  padding-top: 10px;
+}
+a {
+  list-style-type: none;
+  text-decoration: none;
+  font-size: large;
+  color: #520707;
+}
+#mountainDropdown {
+  border: thin solid #520707;
+  color: #520707;
+  font-weight: bold;
+}
+img {
+  border: thin solid #520707;
+  padding: 10px;
+  background-color: antiquewhite;
+
+  border-radius: 30px;
+}
+
+h2 {
+  color: #520707;
+}
+.col-sm-8 {
+  text-align: center;
+}
+.col-sm-7 {
+  text-align: center;
+}
+.col-sm-12 {
+  text-align: center;
+}
+
+.info {
+  border: thin solid #520707;
+  border-radius: 100px;
+  padding: 10px 5px 0px 5px;
+  text-align: center;
+  justify-content: center;
+  background-color: antiquewhite;
+}
+.heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 4 0 4;
+  margin-bottom: 16px;
+  border-bottom: thin solid #520707;
+}
+.current {
+  border: thin solid black;
+  background-color: #520707;
+  color: antiquewhite;
+}
+div.row.info {
+  max-width: 55%;
 }

@@ -5812,12 +5812,15 @@ const nationalParksArray = [
     },
   },
 ];
-// const locationDropdownEl = document.getElementById("locationDropdown");
 locationDropdownEl.onchange = onLocationChange;
 
 parkTypeEl.onchange = onTypeChange;
 
 const tbody = document.querySelector("#stateParkInfo tbody");
+
+const selectedState = locationDropdownEl.value;
+
+const selectedType = parkTypeEl.value;
 
 function onLocationChange() {
   const selectedState = locationDropdownEl.value;
@@ -5846,18 +5849,19 @@ function onLocationChange() {
 function onTypeChange() {
   const selectedType = parkTypeEl.value;
 
-  Array.from(locationDropdownEl).forEach((option) => {
-    if (selectedType) {
-      locationDropdownEl.value = "select";
-    }
-  });
-
   const selectedTypes = nationalParksArray.filter((park) =>
     park.LocationName.includes(selectedType)
   );
 
   const tableRows = document.querySelectorAll("#tableRow tr");
-
+  if (selectedState == "select") {
+    tableRows.innerHTML = "";
+  }
+  Array.from(locationDropdownEl).forEach((option) => {
+    if (locationDropdownEl) {
+      locationDropdownEl.value = "select";
+    }
+  });
   Array.from(tableRows).forEach((park) => {
     tbody.removeChild(park);
   });
@@ -5866,16 +5870,6 @@ function onTypeChange() {
   });
 }
 function locationSelected(myTable, banana) {
-  //   const selectedType = nationalParksArray.filter(
-  //     (park) => (park.arrayElement = "0")===
-  //   );
-  //   return;
-
-  //console.log(selectedType);
-
-  //   if ((banana.value = "0")) {
-  //     banana.value.innerHTML = "No data known";
-  //   } else {
   const row = myTable.insertRow(-1);
 
   const cell1 = row.insertCell(0);

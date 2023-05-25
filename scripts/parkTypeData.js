@@ -17,6 +17,5 @@ const parkTypeEl = document.getElementById("parkType");
 
 parkTypesArray.forEach((type) => {
   const optionEl = new Option(type, type);
-  // const optionEl1 = new Option(type, type);
   parkTypeEl.appendChild(optionEl);
 });

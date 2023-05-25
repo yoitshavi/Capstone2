@@ -8,32 +8,61 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./styles.css" rel="stylesheet" />
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <div class="col">
-          <h1>Search for your Perfect National Park</h1>
-        </div>
+        <header class="heading">
+          <div class="col">
+            <a>
+              <img
+                src="./images/mtnlogo.PNG"
+                alt="Mountain logo"
+                style="width: 50px; margin: 0; padding: 0%"
+              />
+              The Outdoors!
+            </a>
+          </div>
+          <div class="col-sm-6">
+            <ul class="nav nav-pills">
+              <li class="nav-item">
+                <a href="./home_page.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="./mountain.html" class="nav-link">Mountains Page</a>
+              </li>
+              <li class="nav-item">
+                <a href="./search.html" class="nav-link current">Park Search</a>
+              </li>
+            </ul>
+          </div>
+        </header>
       </div>
       <div class="row">
-        <div class="col">
+        <div class="col-sm-8">
+          <h1>Search for your Perfect National Park</h1>
+          <hr />
+        </div>
+      </div>
+      <div class="row selectionBoxes">
+        <div class="col-sm-2">
           <select id="locationDropdown" size="" class="select1">
             <option value="select">Select a Location</option>
           </select>
         </div>
-        <div class="col">
+        <div class="col-sm-3">
           <p>Or</p>
         </div>
-        <div class="col">
+        <div class="col-sm-2">
           <select id="parkType" class="select2">
             <option value="select">Select a Park Type</option>
           </select>
         </div>
       </div>
       <div class="row">
-        <div class="col">
+        <div class="col mx-auto">
           <table id="stateParkInfo">
             <thead>
               <th>Name</th>
@@ -46,6 +75,27 @@
           </table>
         </div>
       </div>
+      <div class="row">
+        <footer
+          class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+        >
+          <div class="col-md-4 d-flex align-items-center">
+            <a
+              href="/"
+              class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1"
+            >
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">
+              <img
+                src="./images/leaf.PNG"
+                alt="leaf logo"
+                style="width: 50px; margin: 0; padding: 0%"
+              />
+              The Outdoors!© 2022</span
+            >
+          </div>
+        </footer>
+      </div>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
@@ -57,15 +107,3 @@
     <script src="./scripts/nationalParkData.js"></script>
   </body>
 </html>
-<!-- 
-  
-    banana.LocationName;
-  
-     banana.Address), banana.City;
-  
-    = banana.Phone;
-  
-    = banana.Fax;
-  
-   = banana.Location.coordinates;
-  } -->

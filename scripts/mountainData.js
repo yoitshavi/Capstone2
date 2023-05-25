@@ -550,8 +550,11 @@ function onMountainDropdownChange() {
   const selectedMountains = mountainsArray.filter(
     (mtn) => mtn.name === selectedMountain
   );
-
+  if (selectedMountain == "select") {
+    displayPictureDiv.innerHTML = "";
+  }
   const tableRows = document.querySelectorAll("#tableRow tr");
+
   Array.from(tableRows).forEach((mtn) => {
     tbody.removeChild(mtn);
   });
@@ -562,16 +565,6 @@ function onMountainDropdownChange() {
   });
 }
 function locationSelected(myTable, banana) {
-  //   const selectedType = nationalParksArray.filter(
-  //     (park) => (park.arrayElement = "0")===
-  //   );
-  //   return;
-
-  //console.log(selectedType);
-
-  //   if ((banana.value = "0")) {
-  //     banana.value.innerHTML = "No data known";
-  //   } else {
   const row = myTable.insertRow(-1);
 
   const cell1 = row.insertCell(0);
@@ -583,8 +576,11 @@ function locationSelected(myTable, banana) {
   const cell3 = row.insertCell(2);
   cell3.innerHTML = banana.elevation;
 
-  //   const cell4 = row.insertCell(3);
-  //   cell4.innerHTML = banana.coords;
+  const cell4 = row.insertCell(3);
+  cell4.innerHTML = banana.effort;
+
+  const cell5 = row.insertCell(4);
+  cell5.innerHTML = `${banana.coords.lng}, ${banana.coords.lat}`;
 }
 
 function displayPicture(park) {
@@ -594,20 +590,10 @@ function displayPicture(park) {
     imgEl = document.createElement("img");
     displayPictureDiv.appendChild(imgEl);
   }
-
   let imageDis = `./images/${park.img}`;
 
   imgEl.src = imageDis;
   imgEl.alt = park.name;
-}
 
-// {
-//     name: "Mt. Tecumseh",
-//     elevation: 4003,
-//     effort: "Moderate",
-//     img: "Tecumseh-StoryImg.jpg",
-//     desc: "Mt. Tecumseh (4,003') is the shortest official 4,000 footer and home to Waterville Valley ski area. Views to the immediate north include Mt. Osceola (4,340'), the highest peak in the region. East, across the valley, is the Tripyramid Massif, which includes North Tripyramid (4,180') and Middle Tripyramid (4,140').",
-//     coords: {
-//       lat: 43.966565,
-//       lng: -71.556745,
-//     },
+  displayPictureDiv.appendChild(imgEl);
+}

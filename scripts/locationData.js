@@ -59,6 +59,5 @@ const locationDropdownEl = document.getElementById("locationDropdown");
 
 locationsArray.forEach((state) => {
   const optionEl = new Option(state, state);
-  //   const optionEl1 = new Option(state, state);
   locationDropdownEl.appendChild(optionEl);
 });
